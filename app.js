@@ -2,8 +2,8 @@
    Vega Fotografía — buscador y portada
    ══════════════════════════════════════════════════════ */
 
-/* ⚠️ CAMBIAR POR EL NÚMERO REAL (código de país + área, sin + ni espacios) */
-const WHATSAPP = '5492604000000';
+/* WhatsApp de contacto: 54 (país) + 9 (celular) + 2604 (área) + número */
+const WHATSAPP = '5492604630599';
 
 const CLIENTES = window.CLIENTES || [];
 const SESIONES = window.SESIONES || [];

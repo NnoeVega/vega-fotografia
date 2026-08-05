@@ -2,8 +2,8 @@
    Vega Fotografía — página de sesión
    ══════════════════════════════════════════════════════ */
 
-/* ⚠️ CAMBIAR POR EL NÚMERO REAL (el mismo que en app.js) */
-const WHATSAPP = '5492604000000';
+/* WhatsApp de contacto: el mismo que en app.js */
+const WHATSAPP = '5492604630599';
 
 const SESIONES = window.SESIONES || [];
 const id = new URLSearchParams(location.search).get('id');
