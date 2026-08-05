@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sesión — Vega Fotografía</title>
+<meta name="description" content="Sesión completa del archivo de Vega Fotografía, San Rafael, Mendoza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="nav solido">
+  <a href="index.html" class="nav__marca">Vega Fotografía</a>
+  <nav class="nav__links">
+    <a href="index.html#buscador">Buscador</a>
+    <a href="index.html#sesiones">Sesiones</a>
+    <a href="index.html#contacto" class="nav__cta">Contacto</a>
+  </nav>
+</header>
+
+<main id="contenido">
+  <div class="sesion-cab">
+    <a href="index.html#sesiones" class="volver">← Volver a las sesiones</a>
+    <h1 id="titulo">Cargando…</h1>
+    <div class="sesion-meta" id="meta"></div>
+    <div class="sesion-acciones">
+      <a href="#" class="btn btn--wsp" id="wspSesion">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.1-.2.3 0 .5.2.4.8 1.3 1.6 2 1 .9 1.9 1.2 2.1 1.3.2.1.4.1.5-.1l.8-1c.2-.2.3-.2.5-.1l2 1c.2.1.4.2.4.3.1.2.1.5 0 1.1Z"/></svg>
+        Pedir esta sesión
+      </a>
+      <button type="button" class="btn btn--fantasma" id="compartir">Copiar enlace</button>
+    </div>
+  </div>
+
+  <div class="galeria" id="galeria"></div>
+</main>
+
+<div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <button class="visor__btn visor__cerrar" id="vCerrar" aria-label="Cerrar">&times;</button>
+  <button class="visor__btn visor__ant" id="vAnt" aria-label="Anterior">‹</button>
+  <img id="vImg" alt="">
+  <button class="visor__btn visor__sig" id="vSig" aria-label="Siguiente">›</button>
+  <div class="visor__contador" id="vCont"></div>
+</div>
+
+<footer class="pie">
+  <p class="pie__marca">Vega Fotografía</p>
+  <p>Archivo fotográfico de San Rafael, Mendoza · 1965 — 2025</p>
+</footer>
+
+<script src="datos/sesiones.js"></script>
+<script src="sesion.js"></script>
+</body>
+</html>

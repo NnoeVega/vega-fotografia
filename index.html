@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vega Fotografía — Un banco de recuerdos para siempre</title>
+<meta name="description" content="Archivo fotográfico de San Rafael, Mendoza. Más de 6.500 registros de 1965 a 2025. Buscá tu apellido y encontrá las fotos de tu familia.">
+<meta property="og:title" content="Vega Fotografía — Un banco de recuerdos para siempre">
+<meta property="og:description" content="Sesenta años de fotografía guardados. Buscá tu apellido y encontrá las fotos de tu familia.">
+<meta property="og:image" content="fotos/portada.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="nav__marca">Vega Fotografía</a>
+  <nav class="nav__links">
+    <a href="#historia">Historia</a>
+    <a href="#buscador">Buscador</a>
+    <a href="#sesiones">Sesiones</a>
+    <a href="#historias">Historias</a>
+    <a href="#contacto" class="nav__cta">Contacto</a>
+  </nav>
+</header>
+
+<!-- ══════════ PORTADA ══════════ -->
+<section class="hero">
+  <div class="hero__texto">
+    <p class="hero__ojo">San Rafael, Mendoza · 1965 — 2025</p>
+    <h1 class="hero__titulo">Un banco de<br><em>recuerdos</em><br>para siempre</h1>
+    <p class="hero__bajada">
+      Sesenta años de historias guardadas, negativo por negativo. Tal vez entre
+      ellos esté el casamiento de tus abuelos, la comunión de tu papá o aquella
+      fotografía que tu familia creyó perdida. Buscá tu apellido y volvamos a
+      encontrarla.
+    </p>
+    <div class="hero__acciones">
+      <a href="#buscador" class="btn btn--principal">Buscar mi apellido</a>
+      <a href="#sesiones" class="btn btn--fantasma">Ver sesiones</a>
+    </div>
+  </div>
+  <div class="hero__foto" role="img" aria-label="Manos sosteniendo un racimo de uvas"></div>
+</section>
+
+<!-- ══════════ CIFRAS ══════════ -->
+<section class="cifras">
+  <div class="cifra"><strong id="c-registros">6.549</strong><span>registros en el archivo</span></div>
+  <div class="cifra"><strong>60</strong><span>años de trabajo</span></div>
+  <div class="cifra"><strong id="c-sesiones">32</strong><span>sesiones digitalizadas</span></div>
+  <div class="cifra"><strong id="c-fotos">616</strong><span>fotos ya disponibles</span></div>
+</section>
+
+<!-- ══════════ HISTORIA ══════════ -->
+<section class="seccion" id="historia">
+  <div class="seccion__cab">
+    <span class="kicker">La historia</span>
+    <h2>Sesenta años detrás de la cámara</h2>
+  </div>
+  <div class="prosa">
+    <p class="prosa__destacada">
+      En 1965 mis abuelos sacaron la primera foto y anotaron un nombre en un
+      cuaderno. Ese gesto — fotografiar y anotar — no lo abandonaron nunca más.
+    </p>
+    <p>
+      Durante más de sesenta años, Vega Fotografías retrató la vida de miles de
+      familias de San Rafael. Casamientos, comuniones, embarazos, reinas de la
+      Vendimia, cumpleaños, retratos familiares… momentos que marcaron una época
+      y que hoy siguen existiendo gracias a un archivo cuidadosamente conservado.
+    </p>
+    <p>
+      Cada sesión fue registrada con su número de negativo, el apellido de la
+      familia y el año en que fue tomada. Ese trabajo de organización, realizado
+      durante décadas, permitió preservar una parte de la historia de San Rafael.
+    </p>
+
+    <p class="prosa__giro">Hoy ese archivo comenzó una nueva etapa.</p>
+
+    <p>
+      Transcribimos uno por uno los antiguos cuadernos del estudio hasta
+      construir una base con <strong>6.549 registros</strong>, que podés buscar
+      por apellido, nombre o año para descubrir si una parte de la historia de tu
+      familia estuvo con nosotros todo este tiempo.
+    </p>
+    <p>
+      Las redes sociales nos regalaron los primeros reencuentros: personas que
+      volvieron a verse de niñas, hijos que descubrieron fotografías inéditas de
+      sus padres y familias que recuperaron imágenes que creían perdidas para
+      siempre.
+    </p>
+
+    <p class="prosa__giro">Ahora queremos que esa experiencia esté al alcance de todos.</p>
+
+    <p>
+      Si encontrás tu apellido, anotá el número de negativo y escribinos.
+      Nosotros nos encargamos de buscar el negativo, localizar la sesión y
+      ayudarte a reencontrarte con un recuerdo único.
+    </p>
+    <p class="firma">Vega Fotografía · San Rafael, Mendoza</p>
+  </div>
+</section>
+
+<!-- ══════════ BUSCADOR ══════════ -->
+<section class="seccion seccion--buscador" id="buscador">
+  <div class="seccion__cab">
+    <span class="kicker">El archivo</span>
+    <h2>Buscá tu apellido</h2>
+    <p class="seccion__sub">
+      Escribí un apellido, un nombre o un año. La búsqueda recorre los
+      <strong id="sub-total">6.549</strong> registros de todo el archivo.
+    </p>
+  </div>
+
+  <div class="buscador">
+    <div class="buscador__campo">
+      <svg class="buscador__lupa" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      <input type="search" id="q" placeholder="Ejemplo: Strologo, Martinez, Gamboa…" autocomplete="off" spellcheck="false">
+      <button type="button" id="limpiar" class="buscador__limpiar" aria-label="Limpiar" hidden>&times;</button>
+    </div>
+    <div class="buscador__filtros">
+      <label for="periodo">Período</label>
+      <select id="periodo"><option value="">Todos los años</option></select>
+      <label class="check"><input type="checkbox" id="soloFotos"> Solo con fotos digitalizadas</label>
+    </div>
+  </div>
+
+  <p class="buscador__estado" id="estado">Empezá a escribir para buscar.</p>
+  <div class="resultados" id="resultados"></div>
+  <button type="button" class="btn btn--fantasma btn--mas" id="verMas" hidden>Ver más resultados</button>
+</section>
+
+<!-- ══════════ SESIONES ══════════ -->
+<section class="seccion" id="sesiones">
+  <div class="seccion__cab">
+    <span class="kicker">Ya digitalizadas</span>
+    <h2>Sesiones completas</h2>
+    <p class="seccion__sub">
+      Estas sesiones ya están escaneadas y se pueden ver enteras. Cada una tiene
+      su propio enlace para compartir.
+    </p>
+  </div>
+  <div class="grilla" id="grilla"></div>
+</section>
+
+<!-- ══════════ HISTORIAS ══════════ -->
+<section class="seccion seccion--historias" id="historias">
+  <div class="seccion__cab">
+    <span class="kicker">El muro</span>
+    <h2>Historias y anécdotas</h2>
+    <p class="seccion__sub">
+      ¿Te reconociste en alguna foto? ¿Te acordás del día que fueron al estudio?
+      Contanos y lo sumamos al muro.
+    </p>
+  </div>
+
+  <div class="historias">
+    <form class="historia-form" id="historiaForm">
+      <div class="campo">
+        <label for="h-nombre">Tu nombre</label>
+        <input type="text" id="h-nombre" required placeholder="Cómo querés que aparezca">
+      </div>
+      <div class="campo">
+        <label for="h-texto">Tu historia</label>
+        <textarea id="h-texto" rows="5" required placeholder="Contanos el recuerdo…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--principal">Enviar mi historia</button>
+      <p class="campo__ayuda">Se envía por WhatsApp y la publicamos en el muro.</p>
+    </form>
+
+    <div class="muro" id="muro">
+      <article class="testimonio">
+        <p>“Encontré a mi mamá de 15 años, con el vestido que ella siempre contaba y nosotros nunca habíamos visto. Lloramos toda la tarde.”</p>
+        <footer>— Ejemplo del muro</footer>
+      </article>
+      <article class="testimonio">
+        <p>“Mi papá falleció hace doce años. Buscar el apellido y que apareciera su comunión fue como recibir algo de él.”</p>
+        <footer>— Ejemplo del muro</footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACTO ══════════ -->
+<section class="seccion seccion--contacto" id="contacto">
+  <div class="contacto">
+    <span class="kicker">¿Encontraste algo?</span>
+    <h2>Escribinos con el número de negativo</h2>
+    <p>
+      Anotá el <strong>número</strong> y el <strong>año</strong> que aparecen en
+      el resultado de la búsqueda. Con esos dos datos vamos directo a la caja,
+      buscamos la sesión y te la pasamos.
+    </p>
+    <a href="#" class="btn btn--wsp" id="wspGeneral">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.5-.3.3c-.1.1-.2.3 0 .5.2.4.8 1.3 1.6 2 1 .9 1.9 1.2 2.1 1.3.2.1.4.1.5-.1l.8-1c.2-.2.3-.2.5-.1l2 1c.2.1.4.2.4.3.1.2.1.5 0 1.1Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <p class="contacto__nota">
+      También podés escribirnos por Instagram o Facebook si te resulta más cómodo.
+    </p>
+  </div>
+</section>
+
+<footer class="pie">
+  <p class="pie__marca">Vega Fotografía</p>
+  <p>Archivo fotográfico de San Rafael, Mendoza · 1965 — 2025</p>
+  <p class="pie__chico">
+    Las anotaciones del archivo son las originales de los cuadernos familiares.
+    Si aparecés y preferís que quitemos tu registro, escribinos y lo hacemos.
+  </p>
+</footer>
+
+<script src="datos/clientes.js"></script>
+<script src="datos/sesiones.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Archivos que Windows y macOS crean solos
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Nada más: las fotos de la carpeta "fotos" SÍ tienen que subirse,
+# son las que muestra la web.
