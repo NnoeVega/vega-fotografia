@@ -183,8 +183,18 @@ if ($grilla) {
 /* ── WhatsApp ────────────────────────────────────── */
 const wspURL = txt => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(txt)}`;
 
+/* Meta Pixel: avisa "Contact" cuando alguien se va a WhatsApp.
+   Si el visitante tiene bloqueador de publicidad, fbq no existe
+   y esto simplemente no hace nada — el botón sigue funcionando. */
+const marcarContacto = origen => {
+  if (typeof fbq === 'function') fbq('track', 'Contact', { content_name: origen });
+};
+
 const $wsp = document.getElementById('wspGeneral');
-if ($wsp) $wsp.href = wspURL('¡Hola! Estuve buscando en el archivo de Vega Fotografía y encontré un registro. Quería consultar por esta sesión:');
+if ($wsp) {
+  $wsp.href = wspURL('¡Hola! Estuve buscando en el archivo de Vega Fotografía y encontré un registro. Quería consultar por esta sesión:');
+  $wsp.addEventListener('click', () => marcarContacto('boton-contacto'));
+}
 
 const $form = document.getElementById('historiaForm');
 if ($form) {
@@ -193,6 +203,7 @@ if ($form) {
     const nom = document.getElementById('h-nombre').value.trim();
     const txt = document.getElementById('h-texto').value.trim();
     if (!nom || !txt) return;
+    marcarContacto('muro-de-historias');
     window.open(wspURL(`Hola, quiero dejar mi historia para el muro de Vega Fotografía.\n\nNombre: ${nom}\n\n${txt}`), '_blank');
   });
 }

@@ -39,8 +39,16 @@ if (!s) {
   const ref = s.n ? `${s.p}, negativo N.º ${s.n}` : s.p;
   const texto =
     `¡Hola! Vi la sesión "${s.x}" (${ref}) en la página de Vega Fotografía y quería consultar por las fotos.`;
-  document.getElementById('wspSesion').href =
-    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
+  const $wsp = document.getElementById('wspSesion');
+  $wsp.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
+
+  /* Meta Pixel: evento Contact, indicando de qué sesión salió la consulta.
+     Si el visitante bloquea el pixel, fbq no existe y no pasa nada. */
+  $wsp.addEventListener('click', () => {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact', { content_name: s.x, content_ids: [s.id], content_type: 'sesion' });
+    }
+  });
 }
 
 /* ── Copiar enlace ───────────────────────────────── */
