@@ -212,6 +212,17 @@ em{ font-style:italic; color:var(--dorado); }
   color:var(--dorado)!important; margin-top:2.5rem!important;
 }
 
+/* ── Página de privacidad ────────────────────────── */
+.seccion--legal{ padding-top:7rem; }
+.seccion--legal .volver{ margin-bottom:2.5rem; }
+.seccion--legal h1{ font-size:clamp(2.1rem,4.6vw,3.4rem); }
+.legal__titulo{
+  font-size:1.35rem; color:var(--dorado);
+  margin:2.6rem 0 .9rem!important;
+}
+.legal__titulo:first-child{ margin-top:0!important; }
+.prosa .btn{ margin-top:.4rem; }
+
 /* ── Buscador ────────────────────────────────────── */
 .seccion--buscador{ scroll-margin-top:60px; }
 .buscador{ margin-bottom:1.6rem; }
@@ -377,6 +388,13 @@ em{ font-style:italic; color:var(--dorado); }
   margin-bottom:.8rem!important;
 }
 .pie__chico{ max-width:52ch; margin-inline:auto!important; margin-top:1.8rem!important; font-size:.78rem; }
+.pie__enlaces{ margin-top:1.4rem!important; }
+.pie__enlaces a{
+  font-size:.8rem; color:var(--tenue);
+  text-decoration:none; border-bottom:1px solid var(--linea);
+  padding-bottom:2px; transition:color .2s, border-color .2s;
+}
+.pie__enlaces a:hover{ color:var(--dorado); border-color:var(--dorado); }
 
 /* ══════════ Página de sesión ══════════ */
 .sesion-cab{
