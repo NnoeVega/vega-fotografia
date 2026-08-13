@@ -173,7 +173,7 @@ if ($grilla) {
        </div>
        <div class="tarjeta__cuerpo">
          <h3 class="tarjeta__nombre">${s.x}</h3>
-         <div class="tarjeta__meta">${s.p} · N.º ${s.n}</div>
+         <div class="tarjeta__meta">${s.p}${s.n ? ' · N.º ' + s.n : ''}</div>
        </div>`;
     frag.appendChild(a);
   });
@@ -206,6 +206,53 @@ if ($form) {
     marcarContacto('muro-de-historias');
     window.open(wspURL(`Hola, quiero dejar mi historia para el muro de Vega Fotografía.\n\nNombre: ${nom}\n\n${txt}`), '_blank');
   });
+}
+
+/* ── Muro de historias ───────────────────────────── */
+/* Las historias salen de la carpeta "Historias" del proyecto: un archivo
+   de texto por historia. actualizar.ps1 las convierte en datos/historias.js.
+   Se arman con textContent (no innerHTML) para que un apostrofe, un signo
+   < o un & escritos en el bloc de notas no rompan la pagina. */
+const $muro = document.getElementById('muro');
+if ($muro) {
+  const HISTORIAS = window.HISTORIAS || [];
+
+  if (HISTORIAS.length === 0) {
+    /* Sin historias no mostramos un muro vacio: escondemos la seccion
+       entera y su enlace del menu. En cuanto aparezca el primer archivo
+       en la carpeta "Historias", vuelve sola. */
+    const seccion = document.getElementById('historias');
+    if (seccion) seccion.hidden = true;
+    const enlace = document.querySelector('.nav__links a[href="#historias"]');
+    if (enlace) enlace.hidden = true;
+  } else {
+    const frag = document.createDocumentFragment();
+    HISTORIAS.forEach(h => {
+      const art = document.createElement('article');
+      art.className = 'testimonio';
+
+      /* Un <p> por párrafo, respetando los renglones en blanco del archivo.
+         Las comillas abren en el primer párrafo y cierran en el último:
+         una historia larga no lleva comillas sueltas en cada renglón. */
+      const parrafos = (h.t || '')
+        .split(/\n\s*\n/)
+        .map(p => p.replace(/\s*\n\s*/g, ' ').trim())
+        .filter(Boolean);
+
+      parrafos.forEach((parrafo, i) => {
+        const p = document.createElement('p');
+        p.textContent = (i === 0 ? '“' : '') + parrafo + (i === parrafos.length - 1 ? '”' : '');
+        art.appendChild(p);
+      });
+
+      const pie = document.createElement('footer');
+      pie.textContent = '— ' + (h.n || 'Anónimo');
+      art.appendChild(pie);
+
+      frag.appendChild(art);
+    });
+    $muro.appendChild(frag);
+  }
 }
 
 /* ── Navegación y aparición ──────────────────────── */
